@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 Theme Name: TK Associates
 Theme URI: http://underscores.me/
@@ -22,6 +21,151 @@ Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
 */
+/* line 1, scss/layouts/_desktop.scss */
+body {
+  background: url(../img/body_bg.jpg) no-repeat center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* line 7, scss/layouts/_desktop.scss */
+.logo_side {
+  position: absolute;
+  top: 30px;
+  right: 80px;
+}
+
+/* line 14, scss/layouts/_desktop.scss */
+.static .wrapper .sidebar {
+  position: static;
+}
+/* line 17, scss/layouts/_desktop.scss */
+.static .wrapper .main {
+  margin-left: 80px;
+}
+
+/* line 21, scss/layouts/_desktop.scss */
+.wrapper {
+  width: 1170px;
+  min-height: 500px;
+  padding: 0px 0px 60px;
+  float: left;
+  background: url(../img/content_bg.png) repeat-y left;
+}
+/* line 27, scss/layouts/_desktop.scss */
+.wrapper .sidebar {
+  width: 390px;
+  float: left;
+  position: fixed;
+  text-align: center;
+}
+/* line 32, scss/layouts/_desktop.scss */
+.wrapper .sidebar .logo {
+  display: block;
+  margin: 100px auto;
+}
+/* line 36, scss/layouts/_desktop.scss */
+.wrapper .sidebar .content {
+  padding: 20px 49px 0px 57px;
+}
+/* line 38, scss/layouts/_desktop.scss */
+.wrapper .sidebar .content ul {
+  list-style: none;
+  padding-left: 0px;
+  padding-bottom: 20px;
+}
+/* line 42, scss/layouts/_desktop.scss */
+.wrapper .sidebar .content ul li {
+  text-align: center;
+  border-bottom: 2px #2c3e50 solid;
+  /*background: url(../img/dash.gif) no-repeat center bottom;*/
+}
+/* line 47, scss/layouts/_desktop.scss */
+.wrapper .sidebar .content ul li a {
+  display: block;
+  padding: 16px 0px;
+  color: white;
+  font-family: "tablet-gothic-wide", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+/* line 55, scss/layouts/_desktop.scss */
+.wrapper .sidebar .content ul li a:hover, .wrapper .sidebar .content ul li a.active {
+  /*text-decoration: underline;*/
+  background: #2c3e50;
+}
+/* line 60, scss/layouts/_desktop.scss */
+.wrapper .sidebar .content ul li:last-child {
+  border-bottom: none;
+}
+/* line 68, scss/layouts/_desktop.scss */
+.wrapper .sidebar .border {
+  width: 370px;
+  border: 10px white solid;
+}
+/* line 72, scss/layouts/_desktop.scss */
+.wrapper .sidebar .ss-icon {
+  text-align: center;
+  padding: 30px 0px;
+}
+/* line 75, scss/layouts/_desktop.scss */
+.wrapper .sidebar .ss-icon a {
+  display: inline-block;
+  font-size: 24px;
+  padding: 0px 20px;
+  color: white;
+  text-decoration: none;
+}
+/* line 83, scss/layouts/_desktop.scss */
+.wrapper .sidebar .copy {
+  color: white;
+  font-family: "tablet-gothic-wide", sans-serif;
+  font-size: 12px;
+  text-align: center;
+  line-height: 15px;
+}
+/* line 89, scss/layouts/_desktop.scss */
+.wrapper .sidebar .copy a {
+  color: white;
+  text-decoration: none;
+}
+/* line 92, scss/layouts/_desktop.scss */
+.wrapper .sidebar .copy a:hover {
+  text-decoration: underline;
+}
+/* line 100, scss/layouts/_desktop.scss */
+.wrapper .main {
+  padding: 60px 0px;
+  width: 616px;
+  float: left;
+  /*margin-left: 68px;*/
+  margin-left: 470px;
+  color: white;
+}
+/* line 107, scss/layouts/_desktop.scss */
+.wrapper .main h1 {
+  font-family: "tablet-gothic-wide", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+}
+/* line 112, scss/layouts/_desktop.scss */
+.wrapper .main h2 {
+  font-family: "tablet-gothic-wide", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+}
+/* line 117, scss/layouts/_desktop.scss */
+.wrapper .main p {
+  font-family: "tablet-gothic-wide", sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+}
+/* line 122, scss/layouts/_desktop.scss */
+.wrapper .main .frame {
+  border: 10px white solid;
+}
+
 /*
 * Symbolset
 * www.symbolset.com
