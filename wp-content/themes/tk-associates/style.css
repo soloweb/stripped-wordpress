@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: TK Associates
 Theme URI: http://underscores.me/
@@ -21,600 +22,1291 @@ Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
 */
-
-
-/* =Reset
--------------------------------------------------------------- */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-	border: 0;
-	font-family: inherit;
-	font-size: 100%;
-	font-style: inherit;
-	font-weight: inherit;
-	margin: 0;
-	outline: 0;
-	padding: 0;
-	vertical-align: baseline;
-}
-html {
-	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
-	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
-	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
-	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
-}
-*,
-*:before,
-*:after { /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
-	-webkit-box-sizing: border-box; /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
-	-moz-box-sizing:    border-box; /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
-	box-sizing:         border-box;
-}
-body {
-	background: #fff;
-}
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-nav,
-section {
-	display: block;
-}
-ol, ul {
-	list-style: none;
-}
-table { /* tables still need 'cellspacing="0"' in the markup */
-	border-collapse: separate;
-	border-spacing: 0;
-}
-caption, th, td {
-	font-weight: normal;
-	text-align: left;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: "";
-}
-blockquote, q {
-	quotes: "" "";
-}
-a:focus {
-	outline: thin dotted;
-}
-a:hover,
-a:active {
-	outline: 0;
-}
-a img {
-	border: 0;
+/*
+* Symbolset
+* www.symbolset.com
+* Copyright © 2012 Oak Studios LLC
+*
+* Upload this file to your web server
+* and place this within your <head> tags.
+* <link href="webfonts/ss-standard.css" rel="stylesheet" />
+*/
+@font-face {
+  font-family: "SSStandard";
+  src: url("fonts/ss-standard.eot");
+  src: url("fonts/ss-standard.eot?#iefix") format("embedded-opentype"), url("fonts/ss-standard.woff") format("woff"), url("fonts/ss-standard.ttf") format("truetype"), url("fonts/ss-standard.svg#SSStandard") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 
-
-/* =Global
------------------------------------------------ */
-
-body,
-button,
-input,
-select,
-textarea {
-	color: #404040;
-	font-family: sans-serif;
-	font-size: 16px;
-	font-size: 1.6rem;
-	line-height: 1.5;
+/* This triggers a redraw in IE to Fix IE8's :before content rendering. */
+/* line 25, scss/fonts/_ss-standard.scss */
+html:hover [class^="ss-"] {
+  -ms-zoom: 1;
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-	clear: both;
-}
-hr {
-	background-color: #ccc;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
-}
-
-/* Text elements */
-p {
-	margin-bottom: 1.5em;
-}
-ul, ol {
-	margin: 0 0 1.5em 3em;
-}
-ul {
-	list-style: disc;
-}
-ol {
-	list-style: decimal;
-}
-li > ul,
-li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
-}
-dt {
-	font-weight: bold;
-}
-dd {
-	margin: 0 1.5em 1.5em;
-}
-b, strong {
-	font-weight: bold;
-}
-dfn, cite, em, i {
-	font-style: italic;
-}
-blockquote {
-	margin: 0 1.5em;
-}
-address {
-	margin: 0 0 1.5em;
-}
-pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
-	font-size: 1.5rem;
-	line-height: 1.6;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1.6em;
-}
-code, kbd, tt, var {
-	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-}
-abbr, acronym {
-	border-bottom: 1px dotted #666;
-	cursor: help;
-}
-mark, ins {
-	background: #fff9c0;
-	text-decoration: none;
-}
-sup,
-sub {
-	font-size: 75%;
-	height: 0;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-}
-sup {
-	bottom: 1ex;
-}
-sub {
-	top: .5ex;
-}
-small {
-	font-size: 75%;
-}
-big {
-	font-size: 125%;
-}
-figure {
-	margin: 0;
-}
-table {
-	margin: 0 0 1.5em;
-	width: 100%;
-}
-th {
-	font-weight: bold;
-}
-img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
-}
-button,
-input,
-select,
-textarea {
-	font-size: 100%; /* Corrects font size not being inherited in all browsers */
-	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
-	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
-	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
-}
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	border: 1px solid #ccc;
-	border-color: #ccc #ccc #bbb #ccc;
-	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
-	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
-	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
-	font-size: 12px;
-	font-size: 1.2rem;
-	line-height: 1;
-	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-}
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa #bbb;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-}
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
-	border-color: #aaa #bbb #bbb #bbb;
-	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
-}
-input[type="checkbox"],
-input[type="radio"] {
-	padding: 0; /* Addresses excess padding in IE8/9 */
-}
-input[type="search"] {
-	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
-	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
-	-moz-box-sizing:    content-box;
-	box-sizing:         content-box;
-}
-input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
-	-webkit-appearance: none;
-}
-button::-moz-focus-inner,
-input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
-	border: 0;
-	padding: 0;
-}
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-}
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-textarea:focus {
-	color: #111;
-}
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {
-	padding: 3px;
-}
-textarea {
-	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
-	padding-left: 3px;
-	vertical-align: top; /* Improves readability and alignment in all browsers */
-	width: 98%;
+/* line 31, scss/fonts/_ss-standard.scss */
+.ss-icon, .ss-icon.ss-standard,
+[class^="ss-"]:before, [class*=" ss-"]:before,
+[class^="ss-"].ss-standard:before, [class*=" ss-"].ss-standard:before,
+[class^="ss-"].right:after, [class*=" ss-"].right:after,
+[class^="ss-"].ss-standard.right:after, [class*=" ss-"].ss-standard.right:after {
+  font-family: "SSStandard";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  white-space: nowrap;
+  /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Links */
-a {
-	color: royalblue;
-}
-a:visited {
-	color: purple;
-}
-a:hover,
-a:focus,
-a:active {
-	color: midnightblue;
+/* line 48, scss/fonts/_ss-standard.scss */
+[class^="ss-"].right:before,
+[class*=" ss-"].right:before {
+  display: none;
+  content: '';
 }
 
-/* Alignment */
-.alignleft {
-	display: inline;
-	float: left;
-	margin-right: 1.5em;
-}
-.alignright {
-	display: inline;
-	float: right;
-	margin-left: 1.5em;
-}
-.aligncenter {
-	clear: both;
-	display: block;
-	margin: 0 auto;
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-cursor:before, .ss-cursor.right:after {
+  content: '';
 }
 
-/* Text meant only for screen readers */
-.screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-crosshair:before, .ss-crosshair.right:after {
+  content: '⌖';
 }
 
-.screen-reader-text:hover,
-.screen-reader-text:active,
-.screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	color: #21759b;
-	display: block;
-	font-size: 14px;
-	font-weight: bold;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000; /* Above WP toolbar */
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-search:before, .ss-search.right:after {
+  content: '🔎';
 }
 
-/* Clearing */
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
-	content: '';
-	display: table;
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-zoomin:before, .ss-zoomin.right:after {
+  content: '';
 }
 
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
-	clear: both;
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-zoomout:before, .ss-zoomout.right:after {
+  content: '';
 }
 
-
-/* =Menu
------------------------------------------------ */
-
-.main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
-}
-.main-navigation ul {
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
-.main-navigation li {
-	float: left;
-	position: relative;
-}
-.main-navigation a {
-	display: block;
-	text-decoration: none;
-}
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	display: none;
-	float: left;
-	left: 0;
-	position: absolute;
-	top: 1.5em;
-	z-index: 99999;
-}
-.main-navigation ul ul ul {
-	left: 100%;
-	top: 0;
-}
-.main-navigation ul ul a {
-	width: 200px;
-}
-.main-navigation ul ul li {
-}
-.main-navigation li:hover > a {
-}
-.main-navigation ul ul :hover > a {
-}
-.main-navigation ul ul a:hover {
-}
-.main-navigation ul li:hover > ul {
-	display: block;
-}
-.main-navigation .current_page_item a,
-.main-navigation .current-menu-item a {
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-view:before, .ss-view.right:after {
+  content: '👀';
 }
 
-/* Small menu */
-.menu-toggle {
-	cursor: pointer;
-	display: none;
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-attach:before, .ss-attach.right:after {
+  content: '📎';
 }
 
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
-	}
-
-	.main-navigation ul {
-		display: none;
-	}
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-link:before, .ss-link.right:after {
+  content: '🔗';
 }
 
-
-/* =Content
------------------------------------------------ */
-
-.sticky {
-}
-.hentry {
-	margin: 0 0 1.5em;
-}
-.byline,
-.updated {
-	display: none;
-}
-.single .byline,
-.group-blog .byline {
-	display: inline;
-}
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-move:before, .ss-move.right:after {
+  content: '';
 }
 
-
-/* =Asides
------------------------------------------------ */
-
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-	display: none;
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-write:before, .ss-write.right:after {
+  content: '✎';
 }
 
-
-/* =Media
------------------------------------------------ */
-
-.page-content img.wp-smiley,
-.entry-content img.wp-smiley,
-.comment-content img.wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
-}
-.wp-caption {
-	border: 1px solid #ccc;
-	margin-bottom: 1.5em;
-	max-width: 100%;
-}
-.wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin: 1.2% auto 0;
-	max-width: 98%;
-}
-.wp-caption-text {
-	text-align: center;
-}
-.wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
-}
-.site-main .gallery {
-	margin-bottom: 1.5em;
-}
-.gallery-caption {
-}
-.site-main .gallery a img {
-	border: none;
-	height: auto;
-	max-width: 90%;
-}
-.site-main .gallery dd {
-	margin: 0;
-}
-.site-main .gallery-columns-4 .gallery-item {
-}
-.site-main .gallery-columns-4 .gallery-item img {
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-writingdisabled:before, .ss-writingdisabled.right:after {
+  content: '';
 }
 
-/* Make sure embeds and iframes fit their containers */
-embed,
-iframe,
-object {
-	max-width: 100%;
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-erase:before, .ss-erase.right:after {
+  content: '✐';
 }
 
-
-/* =Navigation
------------------------------------------------ */
-
-.site-main [class*="navigation"] {
-	margin: 0 0 1.5em;
-	overflow: hidden;
-}
-[class*="navigation"] .nav-previous {
-	float: left;
-	width: 50%;
-}
-[class*="navigation"] .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-compose:before, .ss-compose.right:after {
+  content: '📝';
 }
 
-
-/* =Comments
------------------------------------------------ */
-
-.comment-content a {
-	word-wrap: break-word;
-}
-.bypostauthor {
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-lock:before, .ss-lock.right:after {
+  content: '🔒';
 }
 
-
-/* =Widgets
------------------------------------------------ */
-
-.widget {
-	margin: 0 0 1.5em;
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-unlock:before, .ss-unlock.right:after {
+  content: '🔓';
 }
 
-/* Make sure select elements fit in widgets */
-.widget select {
-	max-width: 100%;
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-key:before, .ss-key.right:after {
+  content: '🔑';
 }
 
-/* Search widget */
-.widget_search .search-submit {
-	display: none;
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-backspace:before, .ss-backspace.right:after {
+  content: '⌫';
 }
 
-
-/* =Infinite Scroll
------------------------------------------------ */
-
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
-	display: none;
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-ban:before, .ss-ban.right:after {
+  content: '🚫';
 }
 
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
-.infinity-end.neverending .site-footer {
-	display: block;
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-trash:before, .ss-trash.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-target:before, .ss-target.right:after {
+  content: '◎';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-tag:before, .ss-tag.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-bookmark:before, .ss-bookmark.right:after {
+  content: '🔖';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-flag:before, .ss-flag.right:after {
+  content: '⚑';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-like:before, .ss-like.right:after {
+  content: '👍';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-dislike:before, .ss-dislike.right:after {
+  content: '👎';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-heart:before, .ss-heart.right:after {
+  content: '♥';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-halfheart:before, .ss-halfheart.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-star:before, .ss-star.right:after {
+  content: '⋆';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-halfstar:before, .ss-halfstar.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-sample:before, .ss-sample.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-crop:before, .ss-crop.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-layers:before, .ss-layers.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-fill:before, .ss-fill.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-stroke:before, .ss-stroke.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-phone:before, .ss-phone.right:after {
+  content: '📞';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-phonedisabled:before, .ss-phonedisabled.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-rss:before, .ss-rss.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-facetime:before, .ss-facetime.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-reply:before, .ss-reply.right:after {
+  content: '↩';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-send:before, .ss-send.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-mail:before, .ss-mail.right:after {
+  content: '✉';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-inbox:before, .ss-inbox.right:after {
+  content: '📥';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-chat:before, .ss-chat.right:after {
+  content: '💬';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-ellipsischat:before, .ss-ellipsischat.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-ellipsis:before, .ss-ellipsis.right:after {
+  content: '…';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-user:before, .ss-user.right:after {
+  content: '👤';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-femaleuser:before, .ss-femaleuser.right:after {
+  content: '👧';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-users:before, .ss-users.right:after {
+  content: '👥';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-cart:before, .ss-cart.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-creditcard:before, .ss-creditcard.right:after {
+  content: '💳';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-dollarsign:before, .ss-dollarsign.right:after {
+  content: '💲';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-barchart:before, .ss-barchart.right:after {
+  content: '📊';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-piechart:before, .ss-piechart.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-box:before, .ss-box.right:after {
+  content: '📦';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-home:before, .ss-home.right:after {
+  content: '⌂';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-buildings:before, .ss-buildings.right:after {
+  content: '🏢';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-warehouse:before, .ss-warehouse.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-globe:before, .ss-globe.right:after {
+  content: '🌎';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-navigate:before, .ss-navigate.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-compass:before, .ss-compass.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-signpost:before, .ss-signpost.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-map:before, .ss-map.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-location:before, .ss-location.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-pin:before, .ss-pin.right:after {
+  content: '📍';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-database:before, .ss-database.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-hdd:before, .ss-hdd.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-music:before, .ss-music.right:after {
+  content: '♫';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-mic:before, .ss-mic.right:after {
+  content: '🎤';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-volume:before, .ss-volume.right:after {
+  content: '🔈';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-lowvolume:before, .ss-lowvolume.right:after {
+  content: '🔉';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-highvolume:before, .ss-highvolume.right:after {
+  content: '🔊';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-airplay:before, .ss-airplay.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-camera:before, .ss-camera.right:after {
+  content: '📷';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-picture:before, .ss-picture.right:after {
+  content: '🌄';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-video:before, .ss-video.right:after {
+  content: '📹';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-play:before, .ss-play.right:after {
+  content: '▶';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-pause:before, .ss-pause.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-stop:before, .ss-stop.right:after {
+  content: '■';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-record:before, .ss-record.right:after {
+  content: '●';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-rewind:before, .ss-rewind.right:after {
+  content: '⏪';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-fastforward:before, .ss-fastforward.right:after {
+  content: '⏩';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-skipback:before, .ss-skipback.right:after {
+  content: '⏮';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-skipforward:before, .ss-skipforward.right:after {
+  content: '⏭';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-eject:before, .ss-eject.right:after {
+  content: '⏏';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-repeat:before, .ss-repeat.right:after {
+  content: '🔁';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-replay:before, .ss-replay.right:after {
+  content: '↺';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-shuffle:before, .ss-shuffle.right:after {
+  content: '🔀';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-book:before, .ss-book.right:after {
+  content: '📕';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-openbook:before, .ss-openbook.right:after {
+  content: '📖';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-notebook:before, .ss-notebook.right:after {
+  content: '📓';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-newspaper:before, .ss-newspaper.right:after {
+  content: '📰';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-grid:before, .ss-grid.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-rows:before, .ss-rows.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-columns:before, .ss-columns.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-thumbnails:before, .ss-thumbnails.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-filter:before, .ss-filter.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-desktop:before, .ss-desktop.right:after {
+  content: '💻';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-laptop:before, .ss-laptop.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-tablet:before, .ss-tablet.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-cell:before, .ss-cell.right:after {
+  content: '📱';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-battery:before, .ss-battery.right:after {
+  content: '🔋';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-highbattery:before, .ss-highbattery.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-mediumbattery:before, .ss-mediumbattery.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-lowbattery:before, .ss-lowbattery.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-emptybattery:before, .ss-emptybattery.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-lightbulb:before, .ss-lightbulb.right:after {
+  content: '💡';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-downloadcloud:before, .ss-downloadcloud.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-download:before, .ss-download.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-uploadcloud:before, .ss-uploadcloud.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-upload:before, .ss-upload.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-fork:before, .ss-fork.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-merge:before, .ss-merge.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-transfer:before, .ss-transfer.right:after {
+  content: '⇆';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-refresh:before, .ss-refresh.right:after {
+  content: '↻';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-sync:before, .ss-sync.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-loading:before, .ss-loading.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-wifi:before, .ss-wifi.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-connection:before, .ss-connection.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-file:before, .ss-file.right:after {
+  content: '📄';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-folder:before, .ss-folder.right:after {
+  content: '📁';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-quote:before, .ss-quote.right:after {
+  content: '“';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-text:before, .ss-text.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-font:before, .ss-font.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-print:before, .ss-print.right:after {
+  content: '⎙';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-fax:before, .ss-fax.right:after {
+  content: '📠';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-list:before, .ss-list.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-layout:before, .ss-layout.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-action:before, .ss-action.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-redirect:before, .ss-redirect.right:after {
+  content: '↪';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-expand:before, .ss-expand.right:after {
+  content: '⤢';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-contract:before, .ss-contract.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-help:before, .ss-help.right:after {
+  content: '❓';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-info:before, .ss-info.right:after {
+  content: 'ℹ';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-alert:before, .ss-alert.right:after {
+  content: '⚠';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-caution:before, .ss-caution.right:after {
+  content: '⛔';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-logout:before, .ss-logout.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-plus:before, .ss-plus.right:after {
+  content: '+';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-hyphen:before, .ss-hyphen.right:after {
+  content: '-';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-check:before, .ss-check.right:after {
+  content: '✓';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-delete:before, .ss-delete.right:after {
+  content: '␡';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-settings:before, .ss-settings.right:after {
+  content: '⚙';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-dashboard:before, .ss-dashboard.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-notifications:before, .ss-notifications.right:after {
+  content: '🔔';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-notificationsdisabled:before, .ss-notificationsdisabled.right:after {
+  content: '🔕';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-clock:before, .ss-clock.right:after {
+  content: '⏲';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-stopwatch:before, .ss-stopwatch.right:after {
+  content: '⏱';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-calendar:before, .ss-calendar.right:after {
+  content: '📅';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-addcalendar:before, .ss-addcalendar.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-removecalendar:before, .ss-removecalendar.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-checkcalendar:before, .ss-checkcalendar.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-deletecalendar:before, .ss-deletecalendar.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-briefcase:before, .ss-briefcase.right:after {
+  content: '💼';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-cloud:before, .ss-cloud.right:after {
+  content: '☁';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-droplet:before, .ss-droplet.right:after {
+  content: '💧';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-flask:before, .ss-flask.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-up:before, .ss-up.right:after {
+  content: '⬆';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-upright:before, .ss-upright.right:after {
+  content: '⬈';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-right:before, .ss-right.right:after {
+  content: '➡';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-downright:before, .ss-downright.right:after {
+  content: '⬊';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-down:before, .ss-down.right:after {
+  content: '⬇';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-downleft:before, .ss-downleft.right:after {
+  content: '⬋';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-left:before, .ss-left.right:after {
+  content: '⬅';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-upleft:before, .ss-upleft.right:after {
+  content: '⬉';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-navigateup:before, .ss-navigateup.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-navigateright:before, .ss-navigateright.right:after {
+  content: '▻';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-navigatedown:before, .ss-navigatedown.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-navigateleft:before, .ss-navigateleft.right:after {
+  content: '◅';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-directup:before, .ss-directup.right:after {
+  content: '▴';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-directright:before, .ss-directright.right:after {
+  content: '▹';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-dropdown:before, .ss-dropdown.right:after {
+  content: '▾';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-directleft:before, .ss-directleft.right:after {
+  content: '◃';
+}
+
+/* line 50, scss/fonts/_ss-standard.scss */
+.ss-retweet:before, .ss-retweet.right:after {
+  content: '';
+}
+
+/* Legacy classes */
+/* line 53, scss/fonts/_ss-standard.scss */
+.ss-volumelow:before, .ss-volumelow.right:after {
+  content: '🔉';
+}
+
+/* line 53, scss/fonts/_ss-standard.scss */
+.ss-volumehigh:before, .ss-volumehigh.right:after {
+  content: '🔊';
+}
+
+/* line 53, scss/fonts/_ss-standard.scss */
+.ss-batteryhigh:before, .ss-batteryhigh.right:after {
+  content: '';
+}
+
+/* line 53, scss/fonts/_ss-standard.scss */
+.ss-batterymedium:before, .ss-batterymedium.right:after {
+  content: '';
+}
+
+/* line 53, scss/fonts/_ss-standard.scss */
+.ss-batterylow:before, .ss-batterylow.right:after {
+  content: '';
+}
+
+/* line 53, scss/fonts/_ss-standard.scss */
+.ss-batteryempty:before, .ss-batteryempty.right:after {
+  content: '';
+}
+
+/* line 53, scss/fonts/_ss-standard.scss */
+.ss-clouddownload:before, .ss-clouddownload.right:after {
+  content: '';
+}
+
+/* line 53, scss/fonts/_ss-standard.scss */
+.ss-cloudupload:before, .ss-cloudupload.right:after {
+  content: '';
+}
+
+/* line 53, scss/fonts/_ss-standard.scss */
+.ss-calendaradd:before, .ss-calendaradd.right:after {
+  content: '';
+}
+
+/* line 53, scss/fonts/_ss-standard.scss */
+.ss-calendarremove:before, .ss-calendarremove.right:after {
+  content: '';
+}
+
+/* line 53, scss/fonts/_ss-standard.scss */
+.ss-calendarcheck:before, .ss-calendarcheck.right:after {
+  content: '';
+}
+
+/* line 53, scss/fonts/_ss-standard.scss */
+.ss-calendardelete:before, .ss-calendardelete.right:after {
+  content: '';
+}
+
+/*
+* Symbolset
+* www.symbolset.com
+* Copyright © 2013 Oak Studios LLC
+*
+* Upload this file to your web server
+* and place this within your <head> tags.
+* <link href="webfonts/ss-social-regular.css" rel="stylesheet" />
+*/
+@font-face {
+  font-family: "SSSocialRegular";
+  src: url("fonts/ss-social-regular.eot");
+  src: url("fonts/ss-social-regular.eot?#iefix") format("embedded-opentype"), url("fonts/ss-social-regular.woff") format("woff"), url("fonts/ss-social-regular.ttf") format("truetype"), url("fonts/ss-social-regular.svg#SSSocialRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* This triggers a redraw in IE to Fix IE8's :before content rendering. */
+/* line 25, scss/fonts/_ss-social-regular.scss */
+html:hover [class^="ss-"] {
+  -ms-zoom: 1;
+}
+
+/* line 31, scss/fonts/_ss-social-regular.scss */
+.ss-icon, .ss-icon.ss-social-regular,
+[class^="ss-"]:before, [class*=" ss-"]:before,
+[class^="ss-"].ss-social-regular:before, [class*=" ss-"].ss-social-regular:before,
+[class^="ss-"].right:after, [class*=" ss-"].right:after,
+[class^="ss-"].ss-social-regular.right:after, [class*=" ss-"].ss-social-regular.right:after {
+  font-family: "SSSocialRegular";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  white-space: nowrap;
+  /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 48, scss/fonts/_ss-social-regular.scss */
+[class^="ss-"].right:before,
+[class*=" ss-"].right:before {
+  display: none;
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-facebook:before, .ss-facebook.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-twitter:before, .ss-twitter.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-linkedin:before, .ss-linkedin.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-googleplus:before, .ss-googleplus.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-appdotnet:before, .ss-appdotnet.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-zerply:before, .ss-zerply.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-reddit:before, .ss-reddit.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-steam:before, .ss-steam.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-tumblr:before, .ss-tumblr.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-wordpress:before, .ss-wordpress.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-blogger:before, .ss-blogger.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-posterous:before, .ss-posterous.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-quora:before, .ss-quora.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-youtube:before, .ss-youtube.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-vimeo:before, .ss-vimeo.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-vine:before, .ss-vine.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-letterboxd:before, .ss-letterboxd.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-flickr:before, .ss-flickr.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-instagram:before, .ss-instagram.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-500px:before, .ss-500px.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-etsy:before, .ss-etsy.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-pinterest:before, .ss-pinterest.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-svpply:before, .ss-svpply.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-readmill:before, .ss-readmill.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-dropbox:before, .ss-dropbox.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-pinboard:before, .ss-pinboard.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-delicious:before, .ss-delicious.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-dribbble:before, .ss-dribbble.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-behance:before, .ss-behance.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-github:before, .ss-github.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-octocat:before, .ss-octocat.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-stackoverflow:before, .ss-stackoverflow.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-paypal:before, .ss-paypal.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-kickstarter:before, .ss-kickstarter.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-foursquare:before, .ss-foursquare.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-yelp:before, .ss-yelp.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-skype:before, .ss-skype.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-rdio:before, .ss-rdio.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-spotify:before, .ss-spotify.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-lastfm:before, .ss-lastfm.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-soundcloud:before, .ss-soundcloud.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-link:before, .ss-link.right:after {
+  content: '🔗';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-phone:before, .ss-phone.right:after {
+  content: '📞';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-mail:before, .ss-mail.right:after {
+  content: '✉';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-like:before, .ss-like.right:after {
+  content: '👍';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-rss:before, .ss-rss.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-share:before, .ss-share.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-apple:before, .ss-apple.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-microsoft:before, .ss-microsoft.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-windows:before, .ss-windows.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-android:before, .ss-android.right:after {
+  content: '';
+}
+
+/* line 50, scss/fonts/_ss-social-regular.scss */
+.ss-blackberry:before, .ss-blackberry.right:after {
+  content: '';
+}
+
+/* Legacy */
+/* line 53, scss/fonts/_ss-social-regular.scss */
+.ss-fivehundredpx:before, .ss-fivehundredpx.right:after {
+  content: '';
 }
