@@ -31,7 +31,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php tk_associates_paging_nav(); ?>
+			<?php stripped_wordpress_paging_nav(); ?>
 
 		<?php else : ?>
 

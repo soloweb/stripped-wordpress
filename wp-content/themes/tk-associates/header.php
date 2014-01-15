@@ -28,7 +28,7 @@
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h1 class="menu-toggle"><?php _e( 'Menu', 'tk-associates' ); ?></h1>
+			<h1 class="menu-toggle"><?php _e( 'Menu', 'stripped-wordpress' ); ?></h1>
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->

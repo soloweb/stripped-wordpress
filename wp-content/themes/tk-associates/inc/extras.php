@@ -13,11 +13,11 @@
  * @param array $args Configuration arguments.
  * @return array
  */
-function tk_associates_page_menu_args( $args ) {
+function stripped_wordpress_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'tk_associates_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'stripped_wordpress_page_menu_args' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -25,7 +25,7 @@ add_filter( 'wp_page_menu_args', 'tk_associates_page_menu_args' );
  * @param array $classes Classes for the body element.
  * @return array
  */
-function tk_associates_body_classes( $classes ) {
+function stripped_wordpress_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -33,7 +33,7 @@ function tk_associates_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'tk_associates_body_classes' );
+add_filter( 'body_class', 'stripped_wordpress_body_classes' );
 
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
@@ -42,7 +42,7 @@ add_filter( 'body_class', 'tk_associates_body_classes' );
  * @param string $sep Optional separator.
  * @return string The filtered title.
  */
-function tk_associates_wp_title( $title, $sep ) {
+function stripped_wordpress_wp_title( $title, $sep ) {
 	global $page, $paged;
 
 	if ( is_feed() ) {
@@ -60,12 +60,12 @@ function tk_associates_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 ) {
-		$title .= " $sep " . sprintf( __( 'Page %s', 'tk-associates' ), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( __( 'Page %s', 'stripped-wordpress' ), max( $paged, $page ) );
 	}
 
 	return $title;
 }
-add_filter( 'wp_title', 'tk_associates_wp_title', 10, 2 );
+add_filter( 'wp_title', 'stripped_wordpress_wp_title', 10, 2 );
 
 /**
  * Sets the authordata global when viewing an author archive.
@@ -79,11 +79,11 @@ add_filter( 'wp_title', 'tk_associates_wp_title', 10, 2 );
  * @global WP_Query $wp_query WordPress Query object.
  * @return void
  */
-function tk_associates_setup_author() {
+function stripped_wordpress_setup_author() {
 	global $wp_query;
 
 	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
 		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
 	}
 }
-add_action( 'wp', 'tk_associates_setup_author' );
+add_action( 'wp', 'stripped_wordpress_setup_author' );

@@ -7,28 +7,28 @@
  * @package TK Associates
  */
 
-if ( ! function_exists( 'tk_associates_paging_nav' ) ) :
+if ( ! function_exists( 'stripped_wordpress_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
  *
  * @return void
  */
-function tk_associates_paging_nav() {
+function stripped_wordpress_paging_nav() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'tk-associates' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'stripped-wordpress' ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'tk-associates' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'stripped-wordpress' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'tk-associates' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'stripped-wordpress' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -37,13 +37,13 @@ function tk_associates_paging_nav() {
 }
 endif;
 
-if ( ! function_exists( 'tk_associates_post_nav' ) ) :
+if ( ! function_exists( 'stripped_wordpress_post_nav' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
  *
  * @return void
  */
-function tk_associates_post_nav() {
+function stripped_wordpress_post_nav() {
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -53,11 +53,11 @@ function tk_associates_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'tk-associates' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'stripped-wordpress' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'tk-associates' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'tk-associates' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'stripped-wordpress' ) );
+				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'stripped-wordpress' ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -65,20 +65,20 @@ function tk_associates_post_nav() {
 }
 endif;
 
-if ( ! function_exists( 'tk_associates_comment' ) ) :
+if ( ! function_exists( 'stripped_wordpress_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  */
-function tk_associates_comment( $comment, $args, $depth ) {
+function stripped_wordpress_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 
 	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
-			<?php _e( 'Pingback:', 'tk-associates' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'tk-associates' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php _e( 'Pingback:', 'stripped-wordpress' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'stripped-wordpress' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 
 	<?php else : ?>
@@ -88,20 +88,20 @@ function tk_associates_comment( $comment, $args, $depth ) {
 			<footer class="comment-meta">
 				<div class="comment-author vcard">
 					<?php if ( 0 != $args['avatar_size'] ) { echo get_avatar( $comment, $args['avatar_size'] ); } ?>
-					<?php printf( __( '%s <span class="says">says:</span>', 'tk-associates' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( __( '%s <span class="says">says:</span>', 'stripped-wordpress' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 				</div><!-- .comment-author -->
 
 				<div class="comment-metadata">
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 						<time datetime="<?php comment_time( 'c' ); ?>">
-							<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'tk-associates' ), get_comment_date(), get_comment_time() ); ?>
+							<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'stripped-wordpress' ), get_comment_date(), get_comment_time() ); ?>
 						</time>
 					</a>
-					<?php edit_comment_link( __( 'Edit', 'tk-associates' ), '<span class="edit-link">', '</span>' ); ?>
+					<?php edit_comment_link( __( 'Edit', 'stripped-wordpress' ), '<span class="edit-link">', '</span>' ); ?>
 				</div><!-- .comment-metadata -->
 
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'tk-associates' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'stripped-wordpress' ); ?></p>
 				<?php endif; ?>
 			</footer><!-- .comment-meta -->
 
@@ -123,9 +123,9 @@ function tk_associates_comment( $comment, $args, $depth ) {
 	<?php
 	endif;
 }
-endif; // ends check for tk_associates_comment()
+endif; // ends check for stripped_wordpress_comment()
 
-if ( ! function_exists( 'tk_associates_posted_on' ) ) :
+if ( ! function_exists( 'stripped_wordpress_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
@@ -135,7 +135,7 @@ endif;
 /**
  * Returns true if a blog has more than 1 category.
  */
-function tk_associates_categorized_blog() {
+function stripped_wordpress_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
@@ -149,20 +149,20 @@ function tk_associates_categorized_blog() {
 	}
 
 	if ( '1' != $all_the_cool_cats ) {
-		// This blog has more than 1 category so tk_associates_categorized_blog should return true.
+		// This blog has more than 1 category so stripped_wordpress_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so tk_associates_categorized_blog should return false.
+		// This blog has only 1 category so stripped_wordpress_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in tk_associates_categorized_blog.
+ * Flush out the transients used in stripped_wordpress_categorized_blog.
  */
-function tk_associates_category_transient_flusher() {
+function stripped_wordpress_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'all_the_cool_cats' );
 }
-add_action( 'edit_category', 'tk_associates_category_transient_flusher' );
-add_action( 'save_post',     'tk_associates_category_transient_flusher' );
+add_action( 'edit_category', 'stripped_wordpress_category_transient_flusher' );
+add_action( 'save_post',     'stripped_wordpress_category_transient_flusher' );

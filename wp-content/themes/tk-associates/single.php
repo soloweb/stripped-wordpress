@@ -14,7 +14,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php tk_associates_post_nav(); ?>
+			<?php stripped_wordpress_post_nav(); ?>
 
 		<?php endwhile; // end of the loop. ?>
 

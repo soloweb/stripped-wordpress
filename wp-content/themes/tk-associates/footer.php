@@ -12,8 +12,8 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<?php do_action( 'tk_associates_credits' ); ?>
-			<a href="http://soloweb.com/" rel="generator"><?php printf( __( 'Designed by %s', 'tk-associates' ), 'Soloweb' ); ?></a>
+			<?php do_action( 'stripped_wordpress_credits' ); ?>
+			<a href="http://soloweb.com/" rel="generator"><?php printf( __( 'Designed by %s', 'stripped-wordpress' ), 'Soloweb' ); ?></a>
 			
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
