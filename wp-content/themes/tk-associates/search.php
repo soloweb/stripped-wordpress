@@ -2,7 +2,7 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package TK Associates
+ * @package Stripped Wordpress
  */
 
 get_header(); ?>

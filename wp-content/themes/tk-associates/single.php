@@ -2,7 +2,7 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package TK Associates
+ * @package Stripped Wordpress
  */
 
 get_header(); ?>

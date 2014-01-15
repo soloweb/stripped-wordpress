@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package TK Associates
+ * @package Stripped Wordpress
  */
 
 if ( ! function_exists( 'stripped_wordpress_paging_nav' ) ) :

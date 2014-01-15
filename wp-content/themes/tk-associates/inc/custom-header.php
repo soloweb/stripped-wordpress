@@ -12,7 +12,7 @@
 	<?php endif; // End header image check. ?>
 
  *
- * @package TK Associates
+ * @package Stripped Wordpress
  */
 
 /**
@@ -22,7 +22,7 @@
  * @uses stripped_wordpress_admin_header_style()
  * @uses stripped_wordpress_admin_header_image()
  *
- * @package TK Associates
+ * @package Stripped Wordpress
  */
 function stripped_wordpress_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'stripped_wordpress_custom_header_args', array(

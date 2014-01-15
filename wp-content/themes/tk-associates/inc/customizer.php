@@ -1,8 +1,8 @@
 <?php
 /**
- * TK Associates Theme Customizer
+ * Stripped Wordpress Theme Customizer
  *
- * @package TK Associates
+ * @package Stripped Wordpress
  */
 
 /**

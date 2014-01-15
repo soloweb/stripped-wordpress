@@ -3,7 +3,7 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package TK Associates
+ * @package Stripped Wordpress
  */
 
 /**

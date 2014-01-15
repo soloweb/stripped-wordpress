@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying search forms in TK Associates
+ * The template for displaying search forms in Stripped Wordpress
  *
- * @package TK Associates
+ * @package Stripped Wordpress
  */
 ?>
 <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">

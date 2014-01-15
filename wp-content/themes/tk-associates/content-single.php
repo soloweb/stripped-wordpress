@@ -1,6 +1,6 @@
 <?php
 /**
- * @package TK Associates
+ * @package Stripped Wordpress
  */
 ?>
 

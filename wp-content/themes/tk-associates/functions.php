@@ -1,8 +1,8 @@
 <?php
 /**
- * TK Associates functions and definitions
+ * Stripped Wordpress functions and definitions
  *
- * @package TK Associates
+ * @package Stripped Wordpress
  */
 
 /**
@@ -25,7 +25,7 @@ function stripped_wordpress_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on TK Associates, use a find and replace
+	 * If you're building a theme based on Stripped Wordpress, use a find and replace
 	 * to change 'stripped-wordpress' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'stripped-wordpress', get_template_directory() . '/languages' );
