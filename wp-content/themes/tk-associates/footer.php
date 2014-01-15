@@ -13,9 +13,8 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
 			<?php do_action( 'tk_associates_credits' ); ?>
-			<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'tk-associates' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'tk-associates' ), 'TK Associates', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
+			<a href="http://soloweb.com/" rel="generator"><?php printf( __( 'Designed by %s', 'tk-associates' ), 'Soloweb' ); ?></a>
+			
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
